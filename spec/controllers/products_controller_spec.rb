@@ -122,4 +122,16 @@ describe ProductsController, type: :request do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    it 'deletes product' do
+      product1 = product
+
+      expect do
+        delete "/brands/#{brand.id}/products/#{product1.id}", headers: authorization_header
+      end.to change { brand.products.count }.by(-1)
+
+      expect(response.status).to eq 200
+    end
+  end
 end

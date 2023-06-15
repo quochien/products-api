@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_brand
-  before_action :find_product, only: %i(show update change_status)
+  before_action :find_product, only: %i(show update change_status destroy)
 
   def index
     render json: ProductSerializer.new(@brand.products)
@@ -27,6 +27,12 @@ class ProductsController < ApplicationController
     else
       render json: @product.errors.messages, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @product.destroy
+
+    render json: ProductSerializer.new(@product), status: :ok
   end
 
   def change_status
