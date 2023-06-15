@@ -13,6 +13,10 @@ module Spec
           }
         }
       end
+
+      def authorization_header
+        { 'Authorization': response.headers['Authorization'] }
+      end
     end
   end
 end

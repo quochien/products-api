@@ -27,9 +27,7 @@ describe Users::SessionsController, type: :request do
     it 'logout' do
       login_with_api(user)
 
-      delete '/logout', headers: {
-        'Authorization': response.headers['Authorization']
-      }
+      delete '/logout', headers: authorization_header
 
       expect(response.status).to eq(200)
       expect(json['status']).to eq(200)
