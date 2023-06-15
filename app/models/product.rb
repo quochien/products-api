@@ -1,7 +1,7 @@
-class Brand < ApplicationRecord
+class Product < ApplicationRecord
   STATUS = %w(active inactive).freeze
 
-  has_many :products
+  belongs_to :brand
 
   validates :name, presence: true
   validates :status, inclusion: { in: STATUS }

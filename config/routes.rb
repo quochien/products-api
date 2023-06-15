@@ -18,5 +18,11 @@ Rails.application.routes.draw do
     member do
       post :change_status
     end
+
+    resources :products do
+      member do
+        post :change_status
+      end
+    end
   end
 end
