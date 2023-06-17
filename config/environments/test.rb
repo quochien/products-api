@@ -8,7 +8,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  config.secret_key_base = "e07ae9a11156f7ac8309e282351ecea3429815935d0a39eff528bf0aaf4149f005e0daea1bd9c14f3294e7eb65f169bf3bfb181ea08569c2967fe9ed60ca0c0a"
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true

@@ -8,6 +8,8 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 require 'jsonapi/rspec'
+require 'simplecov'
+SimpleCov.start
 
 # Requires supporting ruby files
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
